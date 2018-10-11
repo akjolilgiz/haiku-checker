@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/haiku.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> haiku.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">!function(e){var t={};function l(U){<span class="missing-if-branch" title="if path not taken" >I</span>if(t[U])<span class="cstat-no" title="statement not covered" >return t[U].exports;v</span>ar n=t[U]={i:U,l:!1,exports:{}};return e[U].call(n.exports,n,n.exports,l),n.l=!0,n.exports}l.m=e,l.c=t,l.d=<span class="fstat-no" title="function not covered" >function(e,t,U){<span class="cstat-no" title="statement not covered" ></span>l.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:U})}</span>,l.r=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>Object.defineProperty(e,"__esModule",{value:!0})}</span>,l.n=<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>var t=e&amp;&amp;e.__esModule?<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e.default}</span>:<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>return e}</span>;<span class="cstat-no" title="statement not covered" >r</span>eturn l.d(t,"a",t),t}</span>,l.o=<span class="fstat-no" title="function not covered" >function(e,t){<span class="cstat-no" title="statement not covered" ></span>return Object.prototype.hasOwnProperty.call(e,t)}</span>,l.p="/var/folders/zz/zyxvpxvq6csfxvn_n00000s4000069/T/_karma_webpack_/",l(l.s=3)}({3:function(module,exports,__webpack_require__){"use strict";eval('\n\nObject.defineProperty(exports, "__esModule", {\n  value: true\n});\nexports.Haiku = Haiku;\nfunction Haiku(line1, line2, line3) {\n  this.line1 = line1;\n  this.line2 = line2;\n  this.line3 = line3;\n}\n\nHaiku.prototype.syllableChecker2 = function (letter1, letter2, letter3) {\n  var newHaiku = new Haiku(letter1, letter2, letter3);\n  var result = "";\n  if (newHaiku.countVowels(letter2) === 7) {\n    result = "Ok";\n  } else {\n    result = "not 7 syllables";\n  }\n  return result;\n};\nHaiku.prototype.syllableChecker1 = function (letter1, letter2, letter3) {\n  var newHaiku = new Haiku(letter1, letter2, letter3);\n  var result = "";\n  if (newHaiku.countVowels(letter1) === 5) {\n    result = "Ok";\n  } else {\n    result = "not 5 syllables";\n  }\n  return result;\n};\nHaiku.prototype.syllableChecker3 = function (letter1, letter2, letter3) {\n  var newHaiku = new Haiku(letter1, letter2, letter3);\n  var result = "";\n  if (newHaiku.countVowels(letter3) === 5) {\n    result = "Ok";\n  } else {\n    result = "not 5 syllables";\n  }\n  return result;\n};\n\nHaiku.prototype.countVowels = function (letter) {\n  var letters = letter.toLowerCase();\n  var letterChars = letters.split("");\n  var vowels = [\'a\', \'e\', \'i\', \'o\', \'u\', \'y\'];\n  var charWords = letter.split(" ");\n  var exception = [/eo/i, /ai/i, /ei/i, /ee/i, /ou/i, /ui/i, /ie/i, /io/i, /oo/i, /uo/i, /ine/i, /ate/i, /age/i, /eye/i, /ice/i, /ime/i, /ite/i, /yme/i, /oe/i];\n\n  var count = 0;\n  var counts = 0;\n\n  for (var i = 0; i &lt; charWords.length; i++) {\n    for (var j = 0; j &lt; exception.length; j++) {\n      if (exception[j].test(charWords[i])) {\n\n        counts++;\n      }\n    }\n  }\n  for (var _i = 0; _i &lt; letterChars.length; _i++) {\n    if (vowels.includes(letterChars[_i])) {\n      count++;\n    }\n  }\n  return count - counts;\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaGFpa3UuanM/Yzg3ZSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztRQUFnQjtBQUFULGVBQWUsT0FBTyxPQUFPLE9BQ2xDO09BQUssUUFDTDtPQUFLLFFBQ0w7T0FBSyxRQUVOOzs7QUFFRCxNQUFNLFVBQVUsbUJBQW1CLFVBQVUsU0FBUyxTQUFTLFNBQzdEO01BQUksV0FBVyxJQUFJLE1BQU0sU0FBUyxTQUNsQztNQUFJLFNBQ0o7TUFBSSxTQUFTLFlBQVksYUFBYSxHQUNwQzthQUNEO0FBRkQsU0FJRTthQUNEO0FBQ0Q7U0FDRDtBQVZEO0FBV0EsTUFBTSxVQUFVLG1CQUFtQixVQUFVLFNBQVMsU0FBUyxTQUM3RDtNQUFJLFdBQVcsSUFBSSxNQUFNLFNBQVMsU0FDbEM7TUFBSSxTQUNKO01BQUksU0FBUyxZQUFZLGFBQWEsR0FDcEM7YUFDRDtBQUZELFNBSUU7YUFDRDtBQUNEO1NBQ0Q7QUFWRDtBQVdBLE1BQU0sVUFBVSxtQkFBbUIsVUFBVSxTQUFTLFNBQVMsU0FDN0Q7TUFBSSxXQUFXLElBQUksTUFBTSxTQUFTLFNBQ2xDO01BQUksU0FDSjtNQUFJLFNBQVMsWUFBWSxhQUFhLEdBQ3BDO2FBQ0Q7QUFGRCxTQUlFO2FBQ0Q7QUFDRDtTQUNEO0FBVkQ7O0FBWUEsTUFBTSxVQUFVLGNBQWMsVUFBVSxRQUN0QztNQUFJLFVBQVUsT0FDZDtNQUFLLGNBQWMsUUFBUSxNQUMzQjtNQUFNLFNBQVMsQ0FBQyxLQUFJLEtBQUksS0FBSSxLQUFJLEtBQ2hDO01BQUksWUFBWSxPQUFPLE1BQ3ZCO01BQUksWUFBWSxDQUFDLE9BQU0sT0FBTSxPQUFNLE9BQU0sT0FBTSxPQUFNLE9BQU0sT0FBTSxPQUFNLE9BQU0sUUFBTyxRQUFPLFFBQU8sUUFBTyxRQUFPLFFBQU8sUUFBTyxRQUU5SDs7TUFBSSxRQUNKO01BQUksU0FFSjs7T0FBSSxJQUFJLElBQUUsR0FBRyxJQUFHLFVBQVUsUUFBUSxLQUNoQztTQUFJLElBQUksSUFBRSxHQUFHLElBQUUsVUFBVSxRQUFRLEtBQy9CO1VBQUcsVUFBVSxHQUFHLEtBQUssVUFBVSxLQUU3Qjs7QUFDRDtBQUNGO0FBQ0Y7QUFDRDtPQUFJLElBQUksS0FBRyxHQUFHLEtBQUUsWUFBWSxRQUFRLE1BQ2xDO1FBQUcsT0FBTyxTQUFTLFlBQVksTUFDN0I7QUFDRDtBQUNGO0FBQ0Q7U0FBTyxRQUVSO0FBekJEIiwiZmlsZSI6IjMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZnVuY3Rpb24gSGFpa3UobGluZTEsIGxpbmUyLCBsaW5lMyl7XG4gIHRoaXMubGluZTEgPSBsaW5lMTtcbiAgdGhpcy5saW5lMiA9IGxpbmUyO1xuICB0aGlzLmxpbmUzID0gbGluZTM7XG5cbn1cblxuSGFpa3UucHJvdG90eXBlLnN5bGxhYmxlQ2hlY2tlcjIgPSBmdW5jdGlvbiAobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMykge1xuICBsZXQgbmV3SGFpa3UgPSBuZXcgSGFpa3UobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMyk7XG4gIGxldCByZXN1bHQgPSBcIlwiO1xuICBpZiAobmV3SGFpa3UuY291bnRWb3dlbHMobGV0dGVyMikgPT09IDcpe1xuICAgIHJlc3VsdCA9IFwiT2tcIlxuICB9XG4gIGVsc2Uge1xuICAgIHJlc3VsdCA9IFwibm90IDcgc3lsbGFibGVzXCJcbiAgfVxuICByZXR1cm4gcmVzdWx0O1xufVxuSGFpa3UucHJvdG90eXBlLnN5bGxhYmxlQ2hlY2tlcjEgPSBmdW5jdGlvbiAobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMykge1xuICBsZXQgbmV3SGFpa3UgPSBuZXcgSGFpa3UobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMyk7XG4gIGxldCByZXN1bHQgPSBcIlwiO1xuICBpZiAobmV3SGFpa3UuY291bnRWb3dlbHMobGV0dGVyMSkgPT09IDUpe1xuICAgIHJlc3VsdCA9IFwiT2tcIlxuICB9XG4gIGVsc2Uge1xuICAgIHJlc3VsdCA9IFwibm90IDUgc3lsbGFibGVzXCJcbiAgfVxuICByZXR1cm4gcmVzdWx0O1xufVxuSGFpa3UucHJvdG90eXBlLnN5bGxhYmxlQ2hlY2tlcjMgPSBmdW5jdGlvbiAobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMykge1xuICBsZXQgbmV3SGFpa3UgPSBuZXcgSGFpa3UobGV0dGVyMSwgbGV0dGVyMiwgbGV0dGVyMyk7XG4gIGxldCByZXN1bHQgPSBcIlwiO1xuICBpZiAobmV3SGFpa3UuY291bnRWb3dlbHMobGV0dGVyMykgPT09IDUpe1xuICAgIHJlc3VsdCA9IFwiT2tcIlxuICB9XG4gIGVsc2Uge1xuICAgIHJlc3VsdCA9IFwibm90IDUgc3lsbGFibGVzXCJcbiAgfVxuICByZXR1cm4gcmVzdWx0O1xufVxuXG5IYWlrdS5wcm90b3R5cGUuY291bnRWb3dlbHMgPSBmdW5jdGlvbiAobGV0dGVyKSB7XG4gIGxldCBsZXR0ZXJzID0gbGV0dGVyLnRvTG93ZXJDYXNlKCk7XG4gIGxldCAgbGV0dGVyQ2hhcnMgPSBsZXR0ZXJzLnNwbGl0KFwiXCIpO1xuICBjb25zdCB2b3dlbHMgPSBbJ2EnLCdlJywnaScsJ28nLCd1JywgJ3knXTtcbiAgbGV0IGNoYXJXb3JkcyA9IGxldHRlci5zcGxpdChcIiBcIik7XG4gIGxldCBleGNlcHRpb24gPSBbL2VvL2ksL2FpL2ksL2VpL2ksL2VlL2ksL291L2ksL3VpL2ksL2llL2ksL2lvL2ksL29vL2ksL3VvL2ksL2luZS9pLC9hdGUvaSwvYWdlL2ksL2V5ZS9pLC9pY2UvaSwvaW1lL2ksL2l0ZS9pLC95bWUvaSwvb2UvaV07XG5cbiAgbGV0IGNvdW50ID0gMDtcbiAgbGV0IGNvdW50cyA9IDA7XG5cbiAgZm9yKGxldCBpPTA7IGk8IGNoYXJXb3Jkcy5sZW5ndGg7IGkrKykge1xuICAgIGZvcihsZXQgaj0wOyBqPGV4Y2VwdGlvbi5sZW5ndGg7IGorKyl7XG4gICAgICBpZihleGNlcHRpb25bal0udGVzdChjaGFyV29yZHNbaV0pKXtcblxuICAgICAgICBjb3VudHMgKys7XG4gICAgICB9XG4gICAgfVxuICB9XG4gIGZvcihsZXQgaSA9MDsgaTxsZXR0ZXJDaGFycy5sZW5ndGg7IGkrKyl7XG4gICAgaWYodm93ZWxzLmluY2x1ZGVzKGxldHRlckNoYXJzW2ldKSl7XG4gICAgICBjb3VudCArKztcbiAgICB9XG4gIH1cbiAgcmV0dXJuIGNvdW50IC0gY291bnRzO1xuXG59XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///3\n')}});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 11 2018 13:26:41 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

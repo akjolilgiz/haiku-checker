@@ -20,9 +20,12 @@ $(document).ready(function() {
     let result2 = haiku.syllableChecker2(first, second, third);
     let result3 = haiku.syllableChecker3(first, second, third);
 
-    $("#result1").text(line1 + "," + result1);
-    $("#result2").text(line2 + "," + result2);
-    $("#result3").text(line3 + "," + result3);
+    $("#result1").text(line1);
+    $("#result2").text(line2);
+    $("#result3").text(line3);
+    $("#result4").text(result1);
+    $("#result5").text(result2);
+    $("#result6").text(result3);
 
   });
 
